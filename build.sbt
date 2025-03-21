@@ -14,3 +14,5 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-generic",
   "io.circe" %% "circe-parser"
 ).map(_ % circeVersion)
+
+libraryDependencies += "org.apache.kafka" % "kafka-clients" % "3.7.0"
