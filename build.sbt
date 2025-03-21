@@ -16,3 +16,6 @@ libraryDependencies ++= Seq(
 ).map(_ % circeVersion)
 
 libraryDependencies += "org.apache.kafka" % "kafka-clients" % "3.7.0"
+
+libraryDependencies ++= Seq("org.slf4j" % "slf4j-api" % "2.0.17",
+  "org.slf4j" % "slf4j-simple" % "2.0.17")
