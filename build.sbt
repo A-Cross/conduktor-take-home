@@ -17,5 +17,11 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += "org.apache.kafka" % "kafka-clients" % "3.7.0"
 
-libraryDependencies ++= Seq("org.slf4j" % "slf4j-api" % "2.0.17",
-  "org.slf4j" % "slf4j-simple" % "2.0.17")
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.5.18"
+
+libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5"
+
+libraryDependencies += "com.lihaoyi" %% "cask" % "0.10.2"
+
+libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.19"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.19" % "test"
