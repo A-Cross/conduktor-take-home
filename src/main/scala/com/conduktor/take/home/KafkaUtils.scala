@@ -45,9 +45,8 @@ object KafkaUtils {
     consumer.seek(partition2, offset)
     consumer.seek(partition3, offset)
 
-    //TODO might want to change this
-    logger.info("Polling Kafka for 200 milliseconds")
-    val records: ConsumerRecords[String, Person] = consumer.poll(Duration.ofMillis(200))
+    logger.info("Polling Kafka for 500 milliseconds")
+    val records: ConsumerRecords[String, Person] = consumer.poll(Duration.ofMillis(500))
 
     logger.info("Extracting values from retrieved consumer records")
     val test = records.iterator().toList.map{

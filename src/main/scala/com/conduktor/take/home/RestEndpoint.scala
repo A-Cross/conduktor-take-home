@@ -11,16 +11,16 @@ object RestEndpoint extends cask.MainRoutes{
   val logger = Logger(getClass.getName)
 
   val consumer = new KafkaConsumer[String, Person](consumerProps)
+
   logger.info("Assigning partitions to consumer")
   consumer.assign(partitionList.asJava)
 
-
   @cask.get("/topic/:topicName/:offset")
-  def kafkaEndpoint(topicName: String, offset: Long, numberOfRecords: Int) = {
+  def kafkaEndpoint(topicName: String, offset: Long, count: Int): String = {
 
-    logger.info(s"Running GET request at /topic/$topicName/$offset?count=$numberOfRecords")
+    logger.info(s"Running GET request at /topic/$topicName/$offset?count=$count")
 
-    val records = KafkaUtils.consumeRecords(consumer, offset, topicName, numberOfRecords)
+    val records = KafkaUtils.consumeRecords(consumer, offset, topicName, count)
     records match {
       case recordsRetrieved: List[String] => recordsRetrieved.mkString(", \n")
       case recordRetrieved: String => recordRetrieved

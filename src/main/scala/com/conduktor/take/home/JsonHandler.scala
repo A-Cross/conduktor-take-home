@@ -7,10 +7,10 @@ import io.circe.parser._
 import scala.io.Source
 
 object JsonHandler {
-  //TODO Clean up
-  val jsonFile: String = Source.fromResource("random-people-data.json").mkString
 
-  val jsonFileContentsAsJson: Json = parse(jsonFile).getOrElse(Json.Null)
+  private val jsonFile: String = Source.fromResource("random-people-data.json").mkString
+
+  private val jsonFileContentsAsJson: Json = parse(jsonFile).getOrElse(Json.Null)
 
   val jsonContentsFromRoot: List[Person] =
     jsonFileContentsAsJson.hcursor.downField("ctRoot").as[List[Person]].getOrElse(List.empty)

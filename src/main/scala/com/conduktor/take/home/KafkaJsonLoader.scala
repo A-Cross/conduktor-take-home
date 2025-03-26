@@ -8,12 +8,6 @@ object KafkaJsonLoader {
 
   def main(args: Array[String]) = {
 
-    //SO FAR:
-    // Need to add logging
-    // Rest thingy is working mostly, but every second call seems to fail
-    // Add tests
-    //Clean up sbt and other files
-
     val logger = Logger(getClass.getName)
 
     val kafkaProducer = KafkaUtils.producer

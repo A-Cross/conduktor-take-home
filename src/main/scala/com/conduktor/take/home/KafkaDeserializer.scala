@@ -5,7 +5,7 @@ import io.circe.jawn.parseByteArray
 import io.circe.generic.auto._
 
 class KafkaDeserializer extends Deserializer[Person]{
-//Figure this out
+
   val emptyPerson = Person("", "", "", Address("", "", ""), "", List[String](), 0, "", "","", false, 0)
 
   override def deserialize(topic: String, data: Array[Byte]): Person =
