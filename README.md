@@ -17,7 +17,7 @@ How to run the program:
 * Cask was chosen for the REST API due to its simplicity. I was able to write the REST API and start the server very quickly with minimal effort.
 * ScalaLogging was used for simple implementation with Slf4j to provide logging
 
-## Improvements
+## Potential Improvements
 * Better test coverage. I would like to implement integration testing to ensure that the Kafka functionality is working as expected and to catch any edge cases
 * Better error handling. There is code to handle cases where no records are returned, but not all possibilities have been accounted for.
 
